@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <script>
+        function toggleText() {
+        var text = document.getElementById("load");
+        if (text.style.display === "none") {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+        }
+    </script>
+    <div>
+        <p> Position yourself in front of the camera and take your photo.</p>
+        <p><a class="btn btn-primary btn-lg" onclick="toggleText()" href="{{ url_for('bye') }}" role="button">Take photo</a></p>
+    </div>
+        <p id='load' style='display: none'>Performing recognition. Please wait...</p>     
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <h1>Goodbye, {{user_name}}!</h1>
+        <h2>Exit time: {{exit_time}}</h2>
+    </div>
+    <div>
+        <h2>You will be redirected to the login page.</h2>
+    </div>
+    <script>    
+     window.setTimeout(function(){
+       // Move to a new location after a timeout
+       window.location.href = href="{{ url_for('login') }}";
+       }, 5000);
+    </script>
+{% endblock %}
